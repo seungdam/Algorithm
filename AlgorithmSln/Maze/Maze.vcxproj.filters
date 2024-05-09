@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{fcbc8cd3-e0b6-40de-a968-739ac954e998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{4eee80bc-b369-430a-987e-5ce1c4c2040b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{b4635361-707b-4c01-ad00-ca8346263e08}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Header</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleHandler.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapRenderer.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleHandler.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="type.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MapRenderer.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
