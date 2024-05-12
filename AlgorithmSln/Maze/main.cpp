@@ -1,11 +1,19 @@
 ﻿#include "pch.h"
-#include "MapRenderer.h"
+#include "Map.h"
+#include "Player.h"
 
-CMapRenderer cmr(25);
 
 int main()
 {
     uint64 lastTick = 0;
+    CMap cmr;
+    CPlayer p;
+ 
+    cmr.Init(25, &p);
+    p.Init(&cmr);
+
+    cmr.GenerateMap();
+
     while (true)
     {
 #pragma region handle Frame

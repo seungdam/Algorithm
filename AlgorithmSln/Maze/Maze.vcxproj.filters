@@ -10,6 +10,9 @@
     <Filter Include="Map">
       <UniqueIdentifier>{b4635361-707b-4c01-ad00-ca8346263e08}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{67f1105e-933b-4e5e-bd36-d068cba14a6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,8 +24,11 @@
     <ClCompile Include="ConsoleHandler.cpp">
       <Filter>Map</Filter>
     </ClCompile>
-    <ClCompile Include="MapRenderer.cpp">
+    <ClCompile Include="Map.cpp">
       <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -35,8 +41,11 @@
     <ClInclude Include="type.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="MapRenderer.h">
+    <ClInclude Include="Map.h">
       <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

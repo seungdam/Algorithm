@@ -3,11 +3,10 @@
 #include "type.h"
 #include <iostream>
 #include <vector>
+#include <random>
 #include <windows.h>
 
-
 using namespace std;
-
 
 const int32 cMaxWidth = 100;
 const int32 cMaxHeight = 100;
@@ -65,7 +64,7 @@ struct POS
 	}
 };
 
-enum class Dir
+enum Dir
 {
 	UP = 0,
 	LEFT,
