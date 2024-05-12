@@ -27,8 +27,12 @@ TileType CMap::GetTileType(POS pos)
 ConsoleColor CMap::GetTileColor(POS pos)
 {
 
-    if (pos == p->GetPos()) return ConsoleColor::YELLOW;
-    if (pos == GetEnterPos() || pos == GetExitPos())
+    if (p && pos == p->GetPos())
+    {
+        return ConsoleColor::YELLOW;
+    }
+
+    if (pos == GetExitPos())
     {
         return ConsoleColor::BLUE;
     }
@@ -49,7 +53,6 @@ void CMap::Init(const int32& size, CPlayer* player)
 {
     maze_size = size;
     p = player;
-
     GenerateMap();
 }
 
@@ -65,11 +68,7 @@ void CMap::GenerateMap()
     {
         for (int32 x = 0; x < maze_size; ++x)
         {
-            if (x == 0 || y == 0 || x == (maze_size - 1) || y == (maze_size - 1))
-            {
-                maze_board[y][x] = TileType::WALL;
-            }
-            else if (x % 2 == 0 || y % 2 == 0)
+            if (x % 2 == 0 || y % 2 == 0)
             {
                 maze_board[y][x] = TileType::WALL;
             }
@@ -132,9 +131,7 @@ void CMap::Render()
     {
         for (int32 h = 0; h < maze_size; ++h)
         {
-            ConsoleColor curColor = GetTileColor({ h,w });
-           
-            
+            ConsoleColor curColor = GetTileColor({ h, w });
             CConsoleHandler::SetCursorColor(curColor);
             cout << tile;
         }

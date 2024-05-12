@@ -4,10 +4,18 @@ class CMap;
 
 class CPlayer
 {
+	enum
+	{
+		UPDATE_TICK = 100
+	};
 private:
 	POS pos;
-	int32 dir = Dir::UP;
+	int32 dir = UP;
 	CMap* maze = nullptr;
+	vector<POS> myPath;
+	int32 myPathIdx = 0;
+	uint64 accumlateTick;
+
 public:
 	CPlayer();
 	~CPlayer();
@@ -15,6 +23,6 @@ public:
 	void SetPos(POS);
 	POS GetPos();
 	void Update(uint64 deltaTick);
-
+	bool IsCanMove(const POS& pos);
 };
 

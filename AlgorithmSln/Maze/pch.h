@@ -23,7 +23,7 @@ struct POS
 
 	bool operator!=(const POS& other)
 	{
-		return (x != other.x) || (y != other.y);
+		return !(*this == other);
 	}
 
 	POS operator+(const POS& other)
@@ -67,8 +67,9 @@ struct POS
 enum Dir
 {
 	UP = 0,
-	LEFT,
+	RIGHT,
 	DOWN,
-	RIGHT
+	LEFT,
+	DIR_COUNT
 };
 

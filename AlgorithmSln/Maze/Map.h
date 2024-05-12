@@ -32,6 +32,7 @@ public:
 		return { maze_size - 2, maze_size - 2 };
 	}
 
+	int32 GetMapSize() { return maze_size; }
 	void Init(const int32& size, CPlayer* player);
 	void GenerateMap();
 	void Render();

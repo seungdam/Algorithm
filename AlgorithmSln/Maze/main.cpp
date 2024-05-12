@@ -10,10 +10,9 @@ int main()
     CPlayer p;
  
     cmr.Init(25, &p);
+
     p.Init(&cmr);
-
-    cmr.GenerateMap();
-
+    cmr.Render();
     while (true)
     {
 #pragma region handle Frame
@@ -25,6 +24,7 @@ int main()
         // Input
         // Logic 
         // 
+        p.Update(deltaTick);
         // Rendering
         cmr.Render();
         
