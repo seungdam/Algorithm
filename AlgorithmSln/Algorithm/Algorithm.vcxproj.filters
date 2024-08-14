@@ -1,25 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Main">
+    <Filter Include="99. Header">
+      <UniqueIdentifier>{b6858e0b-2fd9-4615-95f6-b974393ee52b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1. Vector">
+      <UniqueIdentifier>{a30a4674-1339-469f-9b63-25ed0399e1b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. List">
+      <UniqueIdentifier>{15375569-d837-46ec-854b-5923cb44a1b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0. Main">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Vector">
-      <UniqueIdentifier>{a30a4674-1339-469f-9b63-25ed0399e1b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algorithm.cpp">
-      <Filter>Main</Filter>
+      <Filter>0. Main</Filter>
     </ClCompile>
     <ClCompile Include="Vector.cpp">
-      <Filter>Vector</Filter>
+      <Filter>1. Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="MyList.cpp">
+      <Filter>2. List</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>99. Header</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector.h">
-      <Filter>Vector</Filter>
+      <Filter>1. Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="MyList.h">
+      <Filter>2. List</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>99. Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
