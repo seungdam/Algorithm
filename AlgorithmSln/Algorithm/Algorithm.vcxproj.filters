@@ -19,7 +19,7 @@
     <ClCompile Include="Algorithm.cpp">
       <Filter>0. Main</Filter>
     </ClCompile>
-    <ClCompile Include="Vector.cpp">
+    <ClCompile Include="MyVector.cpp">
       <Filter>1. Vector</Filter>
     </ClCompile>
     <ClCompile Include="MyList.cpp">
@@ -30,7 +30,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vector.h">
+    <ClInclude Include="MyVector.h">
       <Filter>1. Vector</Filter>
     </ClInclude>
     <ClInclude Include="MyList.h">
