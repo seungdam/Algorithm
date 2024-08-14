@@ -1,24 +1,31 @@
-﻿#include <iostream>
-#include <vector>
-#include <list>
-#include "Vector.h"
-
-using namespace std;
-
+﻿#include "pch.h"
+#include "MyList.h"
+#include "MyVector.h"
 int main()
 {
-	MyVector<int> v;
-	for (int i = 0; i < 100; ++i)
+	MyList<int32> ml;
+	MyVector<char> str;
+
+	for (int i = 0; i < 10; ++i)
 	{
-		v.push_back(i);
-		cout << v.size() << " " << v.capacity() << "\n";
-	}
-	
-	v.clear();
-	for (int i = 0; i < 100; ++i)
-	{
-		cout << v[i] << "\n";
+		if (i % 2) ml.push_back(i);
+		else ml.push_front(i);
 	}
 
+	for (int i = 0; i < 10; ++i)
+	{
+		str.push_back(97 + i);
+	}
+	str.push_back('\0');
 
+	for (const auto& i : ml)
+	{
+		cout << i << "\n";
+	}
+
+	for (const auto& c : str)
+	{
+		cout << c;
+	}
+	cout << "\n";
 }
