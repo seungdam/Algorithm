@@ -17,50 +17,50 @@
 // container compare를 위한 template-meta-programming
 // template을 마치 함수처럼 동작하도록 프로그래밍 하는 것
 
-template<class T>
-class has_func_pop_front
+template<typename T>
+class has_member_pop_front
 {
 	using no = char[1];
 	using yes = char[2];
 
 	// SFINAE 규칙에 의해서 pop_front 함수가 없으면 no를 반환합니다.
-	template<class C>
+	template<typename C>
 	static yes& check(decltype(&C::pop_front));  // Container::pop_front() 함수의 포인터를 나타냄
-	template<class C>
+	template<typename C>
 	static no& check(...);
 public:
 	static const bool value = sizeof(check<T>(nullptr)) == sizeof(yes);
 };
 
-template<typename T, typename Container = deque<T>>
+template<typename V,template<typename,typename> typename C, typename A = std::allocator<V>>
 class MyQueue
 {
+	using Container = C<V, A>;
 private:
 	Container m_container;
 
 	// for vector, array container;
-	int m_size;
-	int m_front;
-	int m_back;
+	int32 m_size;
+	int32 m_front;
+	int32 m_back;
 
 public:	
 	explicit MyQueue() : m_front(0), m_back(0), m_size(0) {};
 	~MyQueue() {};
 
-	// template meta function을 사용해 Container Type에 따라 동일한 다른 기능을 수행할 수 있도록한다.
-	void push(const T& value)
+	void push(const V& value)
 	{
-		if (has_func_pop_front<Container>::value)
+		if (!has_member_pop_front<Container>::value)
 		{
 			if (m_size == m_container.size())
 			{
-				int32 new_size = ::max(1, m_size * 2);
+				int32 new_size = max(1, m_size * 2);
 				Container new_container;
 				new_container.resize(new_size);
-
 				for (int32 idx = 0; idx < m_size; ++idx)
 				{
-					new_container[idx] = m_container[(m_front + idx) % m_container.size())];
+					auto pidx = (m_front + idx) % m_container.size();
+					new_container[idx] = m_container[pidx];
 				}
 				m_container.swap(new_container);
 			}
@@ -77,17 +77,20 @@ public:
 	
 	void pop()
 	{
-		if (!has_func_pop_front<Container>::value)
+		if (!has_member_pop_front<Container>::value)
 		{
 			m_front = (m_front + 1) % m_container.size();
 			--m_size;
 		}
-		else m_container.pop_front();
+		else
+		{
+			m_container.pop_front();
+		}
 	};
 	
-	T& front()
+	V& front()
 	{
-		if (has_func_pop_front<Container>::value)
+		if (has_member_pop_front<Container>::value)
 		{
 			return m_container.front();
 		}
@@ -97,8 +100,20 @@ public:
 		}
 	};
 	
-	T& back()
+	V& back()
 	{
 		return m_container.back();
 	};
+
+	int32 empty() 
+	{
+		if (!has_member_pop_front<Container>::value)
+		{
+			return m_size == 0;
+		}
+		else
+		{
+			return m_container.size() == 0;
+		}
+	}
 };
