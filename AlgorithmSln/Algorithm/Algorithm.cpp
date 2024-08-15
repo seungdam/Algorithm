@@ -71,7 +71,7 @@ int main()
 	std::cout << "\n";
 
 	std::cout << "\n===[Queue]=== FIFO\n\n";
-	MyQueue<int32, deque> mq;
+	MyQueue<int32, std::vector> mq;
 
 	std::cout << "\n     [front]					  [back]\n";
 	std::cout << " [in]: ";

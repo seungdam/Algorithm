@@ -55,12 +55,11 @@ public:
 			if (m_size == m_container.size())
 			{
 				int32 new_size = max(1, m_size * 2);
-				Container new_container;
-				new_container.resize(new_size);
-				for (int32 idx = 0; idx < m_size; ++idx)
+				Container new_container(new_size, 0);
+				for (int32 nidx = 0; nidx < m_size; ++nidx)
 				{
-					auto pidx = (m_front + idx) % m_container.size();
-					new_container[idx] = m_container[pidx];
+					auto cidx = (m_front + nidx) % m_container.size();
+					new_container[nidx] = m_container[cidx];
 				}
 				m_container.swap(new_container);
 			}
@@ -77,17 +76,17 @@ public:
 	
 	void pop()
 	{
-		if (!has_member_pop_front<Container>::value)
+		if constexpr (has_member_pop_front<Container>::value) 
+		{
+			m_container.pop_front();
+		}
+		else
 		{
 			m_front = (m_front + 1) % m_container.size();
 			--m_size;
 		}
-		else
-		{
-			m_container.pop_front();
-		}
 	};
-	
+
 	V& front()
 	{
 		if (has_member_pop_front<Container>::value)
