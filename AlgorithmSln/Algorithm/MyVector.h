@@ -7,7 +7,7 @@ private:
 	int32 m_size;
 	int32 m_capacity;
 public:
-	MyVector() : m_size(0), m_capacity(0), m_data(nullptr) {}
+	explicit MyVector() : m_size(0), m_capacity(0), m_data(nullptr) {}
 	~MyVector()
 	{
 		if (m_data)
@@ -22,8 +22,7 @@ public:
 				return;
 			}
 
-			T* datas = new T[r_capacity + 1];
-
+			T* datas = new T[r_capacity + 1] {};
 			for (int idx = 0; idx < m_capacity; ++idx)
 			{
 				datas[idx] = m_data[idx];
@@ -41,7 +40,7 @@ public:
 	{
 		if (m_size == m_capacity)
 		{
-			int32 new_capacity = static_cast<int>(m_capacity * 1.5);
+			int32 new_capacity = static_cast<int>((m_capacity + 1) * 1.5);
 			if (new_capacity == m_capacity)
 			{
 				new_capacity += 1;

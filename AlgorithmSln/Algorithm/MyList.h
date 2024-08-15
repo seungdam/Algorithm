@@ -1,16 +1,10 @@
 #pragma once
-
-
-
-
-
-
 //[head] <-> ....[][][][][] <-> [tail]
 template<typename T, class Iterator = MyIterator::MyListIter<T>>
 class MyList
 {
 public:
-	MyList() : m_size(0)
+	explicit MyList() : m_size(0)
 	{
 		// make dummy header
 		m_head = new Node<T>();
@@ -21,7 +15,7 @@ public:
 		m_tail->next = m_head;
 		m_tail->prev = m_head;
 	}
-	~MyList() {}
+	 ~MyList() {}
 
 	void push_front(const T& value)
 	{
@@ -32,14 +26,20 @@ public:
 		add_node(m_tail, value);
 	}
 
-	void pop_front()
+	T pop_front()
 	{
-		rm_node(m_head);
+		return rm_node(m_head)->data;
 
 	}
-	void pop_back()
+	T pop_back()
 	{
-		rm_node(m_tail);
+		return rm_node(m_tail)->data;
+	}
+
+	void erase(Iterator iter)
+	{
+		if ((*iter).data == -1) return;
+		rm_node(&(*iter));
 	}
 
 	//           [prev] <-> [before]
@@ -88,16 +88,3 @@ private:
 	Node<T>* m_tail;
 	int32	 m_size;
 };
-
-
-
-
-//{
-//	auto&& __range = range_expression;
-//	for (auto __begin = begin_expr,
-//		__end = end_expr;
-//		__begin != __end; ++__begin) {
-//		range_declaration = *__begin;
-//		loop_statement
-//	}
-//}

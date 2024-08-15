@@ -14,6 +14,12 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="3, Stack">
+      <UniqueIdentifier>{1c998090-d4d4-4791-b4b3-e3c1ddca47f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Queue">
+      <UniqueIdentifier>{2945d9f7-72d9-4ac2-a97d-e3db91808693}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algorithm.cpp">
@@ -28,6 +34,12 @@
     <ClCompile Include="pch.cpp">
       <Filter>99. Header</Filter>
     </ClCompile>
+    <ClCompile Include="MyStack.cpp">
+      <Filter>3, Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="MyQueue.cpp">
+      <Filter>4. Queue</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
@@ -38,6 +50,15 @@
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>99. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MyStack.h">
+      <Filter>3, Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="MyIterator.h">
+      <Filter>99. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MyQueue.h">
+      <Filter>4. Queue</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
