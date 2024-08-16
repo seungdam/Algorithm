@@ -4,61 +4,76 @@
     <Filter Include="99. Header">
       <UniqueIdentifier>{b6858e0b-2fd9-4615-95f6-b974393ee52b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="1. Vector">
-      <UniqueIdentifier>{a30a4674-1339-469f-9b63-25ed0399e1b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="2. List">
-      <UniqueIdentifier>{15375569-d837-46ec-854b-5923cb44a1b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="0. Main">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="3, Stack">
+    <Filter Include="1. Linear Data Structure">
+      <UniqueIdentifier>{fb122574-3b79-4f94-8ad3-7874b52835e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1. Linear Data Structure\1. Vector">
+      <UniqueIdentifier>{a30a4674-1339-469f-9b63-25ed0399e1b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1. Linear Data Structure\2. List">
+      <UniqueIdentifier>{15375569-d837-46ec-854b-5923cb44a1b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1. Linear Data Structure\3, Stack">
       <UniqueIdentifier>{1c998090-d4d4-4791-b4b3-e3c1ddca47f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="4. Queue">
+    <Filter Include="1. Linear Data Structure\4. Queue">
       <UniqueIdentifier>{2945d9f7-72d9-4ac2-a97d-e3db91808693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. Graph">
+      <UniqueIdentifier>{5a25dc30-5847-43cf-8a09-a34e99a68c28}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Algorithm.cpp">
+    <ClCompile Include="LinearDataStructure.cpp">
       <Filter>0. Main</Filter>
     </ClCompile>
     <ClCompile Include="MyVector.cpp">
-      <Filter>1. Vector</Filter>
+      <Filter>1. Linear Data Structure\1. Vector</Filter>
     </ClCompile>
     <ClCompile Include="MyList.cpp">
-      <Filter>2. List</Filter>
+      <Filter>1. Linear Data Structure\2. List</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>99. Header</Filter>
     </ClCompile>
     <ClCompile Include="MyStack.cpp">
-      <Filter>3, Stack</Filter>
+      <Filter>1. Linear Data Structure\3, Stack</Filter>
     </ClCompile>
     <ClCompile Include="MyQueue.cpp">
-      <Filter>4. Queue</Filter>
+      <Filter>1. Linear Data Structure\4. Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>2. Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphExplore.cpp">
+      <Filter>0. Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
-      <Filter>1. Vector</Filter>
+      <Filter>1. Linear Data Structure\1. Vector</Filter>
     </ClInclude>
     <ClInclude Include="MyList.h">
-      <Filter>2. List</Filter>
+      <Filter>1. Linear Data Structure\2. List</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>99. Header</Filter>
     </ClInclude>
     <ClInclude Include="MyStack.h">
-      <Filter>3, Stack</Filter>
+      <Filter>1. Linear Data Structure\3, Stack</Filter>
     </ClInclude>
     <ClInclude Include="MyIterator.h">
       <Filter>99. Header</Filter>
     </ClInclude>
     <ClInclude Include="MyQueue.h">
-      <Filter>4. Queue</Filter>
+      <Filter>1. Linear Data Structure\4. Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>2. Graph</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
