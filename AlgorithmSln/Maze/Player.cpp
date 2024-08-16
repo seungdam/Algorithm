@@ -1,7 +1,8 @@
 #include "pch.h"
 #include "Player.h"
 #include "Map.h"
-
+#include <stack>
+#include <algorithm>
 
 POS frontWeight[4]
 {
@@ -53,6 +54,30 @@ void CPlayer::Init(CMap* map)
 		}
 	}
 
+	stack<POS> impleRoute;
+	for (auto iter = myPath.begin(); iter != (myPath.end() - 1); ++iter)
+	{
+		if (!impleRoute.empty() && impleRoute.top() == *(iter + 1))
+		{
+			impleRoute.pop();
+		}
+		else
+		{
+			impleRoute.push(*iter);
+		}
+	}
+	if (!impleRoute.empty())
+	{
+		impleRoute.push(myPath.back());
+	}
+	myPath.clear();
+	while(!impleRoute.empty())
+	{
+		myPath.push_back(impleRoute.top());
+		impleRoute.pop();
+	}
+
+	std::reverse(myPath.begin(), myPath.end());
 }
 
 void CPlayer::SetPos(POS p)

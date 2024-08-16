@@ -14,7 +14,7 @@ private:
 	CMap* maze = nullptr;
 	vector<POS> myPath;
 	int32 myPathIdx = 0;
-	uint64 accumlateTick;
+	uint64 accumlateTick = 0.f;
 
 public:
 	CPlayer();
