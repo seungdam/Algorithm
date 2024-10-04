@@ -5,7 +5,13 @@ struct Vertex
 	int32 v;
 };
 
-void CreateGraph();
-void CreateGraphImple1();
-void CreateGraphImple2();
-void CreateWeightGraphImple2();
+// Graph Sample
+// 
+//     ¡è ¡æ 2
+// 0 ¡ê 1  
+//     ¡é ¡æ 3 ¡æ 4 ¡ç 5
+
+void CreateSimpleGraph();
+void CreateGraphAdjacentList();
+void CreateGraphAdjacentMatrix();
+void CreateWeightGraphAdjacentMatrix();

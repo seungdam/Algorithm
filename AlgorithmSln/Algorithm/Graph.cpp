@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Graph.h"
 
-void CreateGraph()
+void CreateSimpleGraph()
 {
 
 	struct Vertex1
@@ -41,7 +41,7 @@ void CreateGraph()
 	}
 }
 
-void CreateGraphImple1()
+void CreateGraphAdjacentList()
 {
 	vector<vector<int>> adjacent(6); // adjacent : 인접한
 
@@ -61,7 +61,7 @@ void CreateGraphImple1()
 // 간선과 간선이 빽빽한 경우와 느슨한 경우를 잘 생각해서 그래프를 구현하는 것이 중요
 // EX 친구관계 네트워크 VS 지하철 노선도 ... ETC
 
-void CreateGraphImple2()
+void CreateGraphAdjacentMatrix()
 {
 	// edge를 따로 관리 (2차원 배열 활용)
 	// idea: o,x 대신 가중치 넣기도 가능
@@ -87,7 +87,7 @@ void CreateGraphImple2()
 }
 
 
-void CreateWeightGraphImple2()
+void CreateWeightGraphAdjacentMatrix()
 {
 	// Idea: o,x 대신 가중치 넣기도 가능
 	std::vector<vector<int>> adjacent =

@@ -1,18 +1,9 @@
 #include "pch.h"
-#include <random>
-
 
 random_device rd;
 default_random_engine dre(rd());
-uniform_int_distribution<int> rgb(10, 231);
+uniform_int_distribution<int> rgb(105, 231);
 
-// Graph Sample
-// 
-//     ↑ → 2
-// 0 ↔ 1  
-//     ↓ → 3 → 4 ← 5
-int cnt1 = 0;
-int cnt2 = 0;
 // BFS 깊이 우선 탐색
 struct Vertex
 {
@@ -31,62 +22,87 @@ void CreateAdjacentList()
 	adjacent[3] = { 4 };
 	adjacent[5] = { 4 };
 }
-
 void CreateAdjacentMatrix()
 {
 	
-
 	adjacent_matrix[0][1] = true;
 	adjacent_matrix[0][3] = true;
-	adjacent_matrix[1][1] = true;
 	adjacent_matrix[1][2] = true;
 	adjacent_matrix[1][3] = true;
 	adjacent_matrix[3][4] = true;
 	adjacent_matrix[5][4] = true;
 }
 
-
-
+void DFSList(int, int);
 void DFSList(int enter) // enter: 시작 노드
 {   
-	
 	visited[enter] = true;
-	for (int i = 0; i < cnt1; ++i) cout << "       ";
-	cout << format("\033[38;5;{}m [{}]\033[0m", rgb(dre), enter);
+	cout << format("\033[38;5;{}m[{}]\033[0m", rgb(dre), enter);
+	if (adjacent[enter].empty())
+	{
+		cout << " END\n";
+	}
 	for (auto i : adjacent[enter])
 	{
 		auto to = i;
 		if (!visited[to]) // doesn't visited
 		{
-			cout << format(" -> [{}] \033[0m\n", to);
-			++cnt1;
-			DFSList(to);
+			cout << format(" -> [{}] \033[0m", to);
+			DFSList(enter, to); // call recrusively
 		}
-
 	}
-
-	// 5번은 탐색하지 못한다...
+}
+void DFSList(int parents, int currents)
+{
+	visited[currents] = true;
+	cout << format("\033[38;5;{}m[{}] -> \033[38;5;{}m[{}] \033[0m", rgb(dre), parents, rgb(dre), currents);
+	if (adjacent[currents].empty())
+	{
+		cout << " END\n";
+	}
+	for (auto i : adjacent[currents])
+	{
+		auto to = i;
+		if (!visited[to]) // doesn't visited
+		{
+			DFSList(currents, to); // call recrusively
+		}
+	}
 }
 
+void DFSMatrix(int, int);
 void DFSMatrix(int from) // enter: 시작 노드
 {
-	
 	visited[from] = true;
-	for (int i = 0; i < cnt2; ++i) cout << "       ";
-	cout << format("\033[38;5;{}m [{}]\033[0m", rgb(dre), from);
-	
+	cout << format("\033[38;5;{}m[{}]", rgb(dre), from);
 	for (int to = 0; to < 6; ++to)
 	{
-		if (!adjacent_matrix[from][to]) continue; // doesn't adjacent
+		if (!adjacent_matrix[from][to] || from == to) continue; // doesn't adjacent
 		if (!visited[to])
 		{
-			cout << format(" -> [{}] \033[0m\n", to);
-			++cnt2;
-			DFSMatrix(to);
+			DFSMatrix(from, to);
 		}
 	}
-
-	// 5번은 탐색하지 못한다...
+}
+void DFSMatrix(int parent, int current) // enter: 시작 노드
+{
+	visited[current] = true;
+	cout << format(" -> \033[38;5;{}m[{}] \033[0m", rgb(dre), current);
+	
+	int cnt{ 0 };
+	for (int to = 0; to < 6; ++to)
+	{
+		if (!adjacent_matrix[current][to])
+		{
+			++cnt;
+			continue; // doesn't adjacent
+		}
+		if (!visited[to])
+		{
+			DFSMatrix(current, to);
+		}
+	}
+	if (cnt == 6) cout << "END\n";
 }
 
 void DFSAll()
@@ -108,7 +124,7 @@ int main()
 	DFSAll();
 
 	for (int i = 0; i < 6; ++i) visited[i] = false;
-	cout << "\n\033[1; 33m[Matrix]\n";
+	cout << "\n\n\033[1; 33m[Matrix]\n";
 	DFSMatrix(0);
 
 	cout << "\n[DFSAll()]\n";
