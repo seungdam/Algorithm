@@ -3,6 +3,12 @@
 #include "type.h"
 #include <iostream>
 #include <vector>
+#include <stack>
+#include <algorithm>
+#include <array>
+#include <map>
+#include <unordered_map>
+#include <queue>
 #include <random>
 #include <windows.h>
 
@@ -25,7 +31,11 @@ struct POS
 	{
 		return !(*this == other);
 	}
-
+	bool operator<(const POS& other) const
+	{
+		if (y != other.y) return y < other.y;
+		 return x < other.x;
+	}
 	POS operator+(const POS& other)
 	{
 		POS retVal;

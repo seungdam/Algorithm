@@ -27,8 +27,5 @@ int main()
         p.Update(deltaTick);
         // Rendering
         cmr.Render();
-        
-        
-        
     }
 }
