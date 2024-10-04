@@ -4,10 +4,6 @@
     <Filter Include="99. Header">
       <UniqueIdentifier>{b6858e0b-2fd9-4615-95f6-b974393ee52b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="0. Main">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="1. Linear Data Structure">
       <UniqueIdentifier>{fb122574-3b79-4f94-8ad3-7874b52835e3}</UniqueIdentifier>
     </Filter>
@@ -26,11 +22,24 @@
     <Filter Include="2. Graph">
       <UniqueIdentifier>{5a25dc30-5847-43cf-8a09-a34e99a68c28}</UniqueIdentifier>
     </Filter>
+    <Filter Include="100. CodingTest">
+      <UniqueIdentifier>{1077002f-cd69-44ff-a0af-92dfc39d13d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0. Explore">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="3.Tree">
+      <UniqueIdentifier>{f56a1fea-20eb-4ed3-95c5-f4a00601984e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4. Sort">
+      <UniqueIdentifier>{226c60bf-c461-4411-9112-88f5959ff8e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1. Linear Data Structure\5. Priority Queue">
+      <UniqueIdentifier>{bdff5805-0408-481c-b252-6a3e69f5cf22}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LinearDataStructure.cpp">
-      <Filter>0. Main</Filter>
-    </ClCompile>
     <ClCompile Include="MyVector.cpp">
       <Filter>1. Linear Data Structure\1. Vector</Filter>
     </ClCompile>
@@ -49,8 +58,65 @@
     <ClCompile Include="Graph.cpp">
       <Filter>2. Graph</Filter>
     </ClCompile>
-    <ClCompile Include="GraphExplore.cpp">
-      <Filter>0. Main</Filter>
+    <ClCompile Include="GraphExploreDFS.cpp">
+      <Filter>0. Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphExploreBFS.cpp">
+      <Filter>0. Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="graph_problem1.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="graph_problem2.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="다익스트라.cpp">
+      <Filter>0. Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs_problem1.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs_problem2.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs_problem3.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs_problem4.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearDataStructure.cpp">
+      <Filter>1. Linear Data Structure</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_Tree.cpp">
+      <Filter>3.Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap_Tree.cpp">
+      <Filter>3.Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="all_sort.cpp">
+      <Filter>4. Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="priority_queue.cpp">
+      <Filter>1. Linear Data Structure\5. Priority Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_problem1-k번째 수.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_problem1-가장 큰 수.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="sort_problem3-h-idexcpp.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="heap_problem1.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="heap_problem2.cpp">
+      <Filter>100. CodingTest</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_search_tree.cpp">
+      <Filter>3.Tree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
